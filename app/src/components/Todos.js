@@ -13,7 +13,7 @@ const Todos = () => {
   const { todos } = data;
 
   return todos.map(({ id, description, done }) => {
-    return <p key={id} onClick={() => updateTodo(id, !done)}>{description}</p>
+    return <p key={id} onClick={() => updateTodo({ variables: { id, done: !done } })}>{description}</p>
   })
 }
 
